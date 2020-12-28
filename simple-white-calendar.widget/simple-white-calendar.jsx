@@ -112,8 +112,8 @@ export const render = ({ output, error }) => {
     return <p>output is not defined</p>;
   }
 
-  const s = parse(output);
   if(output){
+  const s = parse(output);
     return (
       <div>
         {header(...s.headers)}
