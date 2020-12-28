@@ -113,10 +113,12 @@ export const render = ({ output, error }) => {
   }
 
   const s = parse(output);
-  return (
-    <div>
-      {header(...s.headers)}
-      {table(s.tableHeaderRow, s.tableBodyRows, s.today)}
-    </div>
-  );
+  if(output){
+    return (
+      <div>
+        {header(...s.headers)}
+        {table(s.tableHeaderRow, s.tableBodyRows, s.today)}
+      </div>
+    );
+  }
 };
