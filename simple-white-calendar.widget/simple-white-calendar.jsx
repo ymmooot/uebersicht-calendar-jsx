@@ -112,11 +112,13 @@ export const render = ({ output, error }) => {
     return <p>output is not defined</p>;
   }
 
+  if(output){
   const s = parse(output);
-  return (
-    <div>
-      {header(...s.headers)}
-      {table(s.tableHeaderRow, s.tableBodyRows, s.today)}
-    </div>
-  );
+    return (
+      <div>
+        {header(...s.headers)}
+        {table(s.tableHeaderRow, s.tableBodyRows, s.today)}
+      </div>
+    );
+  }
 };
